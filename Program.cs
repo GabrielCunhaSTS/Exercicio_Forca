@@ -1,18 +1,17 @@
 ﻿string palavraSecreta;
-char letra;
-bool existeNaPalavra;
+char letraDigitada;
+bool ContemLetra;
 
-Console.WriteLine("--- Forca ---\n");
+Console.WriteLine("--- Jogo da forca ---");
 
-Console.Write("Qual a palavra secreta? ");
+Console.Write("Qual a palavra secreta: ");
 palavraSecreta = Console.ReadLine()!.Trim().ToLower();
 
 Console.Write("Qual a letra? ");
-letra = char.ToLower(Console.ReadKey().KeyChar);
+letraDigitada = char.ToLower(Console.ReadKey().KeyChar);
+Console.ReadKey();
 
-Console.WriteLine("\n");
+ContemLetra = palavraSecreta.Contains(letraDigitada);
 
-existeNaPalavra = palavraSecreta.Contains(letra);
-
-Console.WriteLine($"A letra \"{letra}\" existe na palavra secreta => {existeNaPalavra}");
+Console.WriteLine($"\nA letra \"{letraDigitada}\" existe na palavra secreta => {ContemLetra}");
 
